@@ -3,7 +3,7 @@ FROM nginx:latest
 
 # Copy the default HTML file to the Nginx default document root
 COPY index.html /usr/share/nginx/html/
-
+#uopdaste
 # Expose port 80 for web traffic
 EXPOSE 80
 
