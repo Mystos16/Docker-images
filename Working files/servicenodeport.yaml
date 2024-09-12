@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: myfirst-service
+  labels:
+    app: my-container
+spec:
+  selector:
+    app: my-container  # Verbindt de service met de juiste pods
+  ports:
+    - protocol: TCP
+      port: 80           # De poort waarop de service bereikbaar is binnen het cluster
+      targetPort: 80      # De poort in de container
+      nodePort: 30007     # De specifieke NodePort waarop de service extern bereikbaar is (30000-32767)
+  type: NodePort          # NodePort service, waardoor deze extern bereikbaar is
