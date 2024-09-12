@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: myfirst-service
+  labels:
+    app: my-container
+spec:
+  selector:
+    app: my-container  # Verbindt de service met de juiste pods
+  ports:
+    - protocol: TCP
+      port: 80           # De poort waarop de service binnen het cluster bereikbaar is
+      targetPort: 80      # De poort in de container
+  type: LoadBalancer      # LoadBalancer service, voor externe toegang via een load balancer
